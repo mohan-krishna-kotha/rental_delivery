@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEx Delivery Partner - Premium Rental Delivery Platform</title>
+    <meta name="description"
+        content="Join RentEx as a delivery partner and earn rewards while delivering rental items with our intuitive, feature-rich mobile platform.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- ==================== LOGIN PAGE ==================== -->
+        <div id="loginPage" class="page active">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="logo">📦</div>
+                    <h1>RentEx Delivery</h1>
+                    <p>Partner Portal - Sign in to continue</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="input-group">
+                        <label for="emailPhone">Email or Phone Number</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="text" id="emailPhone" placeholder="Enter your email or phone" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <span class="password-toggle"
+                                onclick="togglePasswordVisibility('password', this)">👁️</span>
+                        </div>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-icon">
+                        <span>Sign In</span>
+                        <span>→</span>
+                    </button>
+
+                    <div
+                        style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.875rem;">
+                        Don't have an account?
+                        <a href="#" onclick="showPage('signupPage'); return false;"
+                            style="color: var(--primary); font-weight: 600; text-decoration: none;">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ==================== FORGOT PASSWORD PAGE ==================== -->
+        <div id="forgotPasswordPage" class="page">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="logo">🔒</div>
+                    <h1>Reset Password</h1>
+                    <p>Enter your email or phone to reset your password</p>
+                </div>
+
+                <form class="login-form" id="forgotPasswordForm">
+                    <div class="input-group">
+                        <label for="resetEmailPhone">Email or Phone Number</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="text" id="resetEmailPhone" placeholder="Enter your email or phone" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-icon">
+                        <span>Send Reset Code</span>
+                        <span>→</span>
+                    </button>
+
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <a href="#" onclick="showPage('loginPage'); return false;"
+                            style="color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;">
+                            ← Back to Login
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ==================== RESET PASSWORD PAGE ==================== -->
+        <div id="resetPasswordPage" class="page">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="logo">✓</div>
+                    <h1>Create New Password</h1>
+                    <p>Enter your new password below</p>
+                </div>
+
+                <form class="login-form" id="resetPasswordForm">
+                    <div class="input-group">
+                        <label for="newPassword">New Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="newPassword" placeholder="Enter new password (min. 6 characters)"
+                                required minlength="6">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="confirmPassword" placeholder="Confirm new password" required
+                                minlength="6">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-icon">
+                        <span>Reset Password</span>
+                        <span>✓</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ==================== SIGN UP PAGE ==================== -->
+        <div id="signupPage" class="page">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="logo">✨</div>
+                    <h1>Create Account</h1>
+                    <p>Join as a delivery partner and start earning</p>
+                </div>
+
+                <form class="login-form" id="signupForm">
+                    <div class="input-group">
+                        <label for="signupName">Full Name</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="signupName" placeholder="Enter your full name" required
+                                minlength="3">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signupEmailPhone">Email or Phone Number</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="text" id="signupEmailPhone" placeholder="Enter your email or phone" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="signupPassword"
+                                placeholder="Create a password (min. 6 characters)" required minlength="6">
+                            <span class="password-toggle"
+                                onclick="togglePasswordVisibility('signupPassword', this)">👁️</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="signupConfirmPassword" placeholder="Confirm your password"
+                                required minlength="6">
+                            <span class="password-toggle"
+                                onclick="togglePasswordVisibility('signupConfirmPassword', this)">👁️</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-icon">
+                        <span>Create Account</span>
+                        <span>✓</span>
+                    </button>
+
+                    <div
+                        style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.875rem;">
+                        Already have an account?
+                        <a href="#" onclick="showPage('loginPage'); return false;"
+                            style="color: var(--primary); font-weight: 600; text-decoration: none;">Sign In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ==================== DASHBOARD PAGE ==================== -->
+        <div id="dashboardPage" class="page">
+            <div class="dashboard">
+                <div class="welcome-card">
+                    <h2>Welcome, Alex! 👋</h2>
+                    <p>You have 3 new delivery requests today</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-label">Today's Earnings</div>
+                        <div class="stat-value">₹1,250</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">✓</div>
+                        <div class="stat-label">Completed</div>
+                        <div class="stat-value">8</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-label">Active</div>
+                        <div class="stat-value">2</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-label">Rewards</div>
+                        <div class="stat-value">850 pts</div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h3>Upcoming Deliveries</h3>
+                    <a href="#" class="view-all">View All →</a>
+                </div>
+
+                <div class="order-list">
+                    <!-- Order 1 - Pickup from Owner (Delivery Type 1) -->
+                    <div class="order-card" onclick="viewOrderDetails('ORD-2451', 'PICKUP_FROM_OWNER')">
+                        <div class="order-header">
+                            <span class="order-id">📦 ORD-2451</span>
+                            <span class="status-badge status-pickup-owner">Pickup from Owner</span>
+                        </div>
+
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <span class="detail-icon">📷</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Item</div>
+                                    <div class="detail-value">Professional Camera Kit</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">👤</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Pickup From</div>
+                                    <div class="detail-value">Rajesh Kumar (Owner)</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Deliver To</div>
+                                    <div class="detail-value">Priya Sharma (Borrower)</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">💰</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Earnings</div>
+                                    <div class="detail-value">₹180</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">📅</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Rental Period</div>
+                                    <div class="detail-value">3 Days</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="btn btn-secondary btn-small"
+                                onclick="event.stopPropagation(); rejectOrder('ORD-2451')">
+                                ✕ Reject
+                            </button>
+                            <button class="btn btn-success btn-small"
+                                onclick="event.stopPropagation(); acceptOrder('ORD-2451', 'PICKUP_FROM_OWNER')">
+                                ✓ Accept
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Order 2 - Return to Owner (Delivery Type 2) -->
+                    <div class="order-card" onclick="viewOrderDetails('ORD-2450', 'RETURN_TO_OWNER')">
+                        <div class="order-header">
+                            <span class="order-id">📦 ORD-2450</span>
+                            <span class="status-badge status-return-owner">Return to Owner</span>
+                        </div>
+
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <span class="detail-icon">📷</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Item</div>
+                                    <div class="detail-value">Professional Camera Kit (Return)</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">📍</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Pickup From</div>
+                                    <div class="detail-value">Priya Sharma (Borrower)</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">🏠</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Return To</div>
+                                    <div class="detail-value">Rajesh Kumar (Owner)</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">💰</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Earnings</div>
+                                    <div class="detail-value">₹180</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">📋</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Original Delivery</div>
+                                    <div class="detail-value">ORD-2451 (Completed 3 days ago)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="btn btn-secondary btn-small"
+                                onclick="event.stopPropagation(); rejectOrder('ORD-2450')">
+                                ✕ Reject
+                            </button>
+                            <button class="btn btn-success btn-small"
+                                onclick="event.stopPropagation(); acceptOrder('ORD-2450', 'RETURN_TO_OWNER')">
+                                ✓ Accept
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Order 3 - Another Pickup from Owner -->
+                    <div class="order-card" onclick="viewOrderDetails('ORD-2452', 'PICKUP_FROM_OWNER')">
+                        <div class="order-header">
+                            <span class="order-id">📦 ORD-2452</span>
+                            <span class="status-badge status-pickup-owner">Pickup from Owner</span>
+                        </div>
+
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <span class="detail-icon">🚴</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Item</div>
+                                    <div class="detail-value">Mountain Bike</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">👤</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Pickup From</div>
+                                    <div class="detail-value">Amit Singh (Owner)</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Deliver To</div>
+                                    <div class="detail-value">Neha Gupta (Borrower)</div>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">💰</span>
+                                <div class="detail-content">
+                                    <div class="detail-label">Earnings</div>
+                                    <div class="detail-value">₹350</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="btn btn-secondary btn-small"
+                                onclick="event.stopPropagation(); rejectOrder('ORD-2452')">
+                                ✕ Reject
+                            </button>
+                            <button class="btn btn-success btn-small"
+                                onclick="event.stopPropagation(); acceptOrder('ORD-2452', 'PICKUP_FROM_OWNER')">
+                                ✓ Accept
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a class="nav-item active" onclick="showPage('dashboardPage')">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a class="nav-item" onclick="showPage('ordersPage')">
+                    <span class="icon">📦</span>
+                    <span>Orders</span>
+                </a>
+                <a class="nav-item" onclick="showPage('earningsPage')">
+                    <span class="icon">💰</span>
+                    <span>Earnings</span>
+                </a>
+                <a class="nav-item" onclick="showPage('profilePage')">
+                    <span class="icon">👤</span>
+                    <span>Profile</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- ==================== ORDER DETAILS PAGE ==================== -->
+        <div id="orderDetailsPage" class="page">
+            <header class="header">
+                <div class="header-content">
+                    <button class="back-btn" onclick="showPage('dashboardPage')">←</button>
+                    <h1 class="header-title">Order Details</h1>
+                    <div class="header-actions">
+                        <button class="icon-btn" onclick="alert('Call support')">📞</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="order-details-page">
+                <!-- Order Info -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span style="font-size: 1.5rem;">📦</span>
+                        <h3>Order #ORD-2451</h3>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-item-icon">📷</span>
+                            <div class="info-item-content">
+                                <p>Item Name</p>
+                                <p>Professional Camera Kit</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item-icon">📏</span>
+                            <div class="info-item-content">
+                                <p>Package Size</p>
+                                <p>Medium - 5 kg (Fragile)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item-icon">💰</span>
+                            <div class="info-item-content">
+                                <p>Your Earnings</p>
+                                <p style="color: var(--success); font-weight: 700; font-size: 1.25rem;">₹180</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item-icon">📅</span>
+                            <div class="info-item-content">
+                                <p>Rental Period</p>
+                                <p>3 Days (Dec 12 - Dec 15)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seller Information -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span style="font-size: 1.5rem;">👤</span>
+                        <h3>Seller Information</h3>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar">RK</div>
+                        <div class="user-details">
+                            <h4>Rajesh Kumar</h4>
+                            <p>⭐ 4.8 Rating · 156 Items Rented</p>
+                        </div>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-item-icon">📍</span>
+                            <div class="info-item-content">
+                                <p>Pickup Address</p>
+                                <p>123 MG Road, Bangalore, Karnataka 560001</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item-icon">📞</span>
+                            <div class="info-item-content">
+                                <p>Phone Number</p>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buyer Information -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span style="font-size: 1.5rem;">🛒</span>
+                        <h3>Customer Information</h3>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar" style="background: var(--success-gradient);">PS</div>
+                        <div class="user-details">
+                            <h4>Priya Sharma</h4>
+                            <p>⭐ 4.9 Rating · Member since 2022</p>
+                        </div>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-item-icon">🎯</span>
+                            <div class="info-item-content">
+                                <p>Delivery Address</p>
+                                <p>456 Indiranagar 2nd Stage, Bangalore, Karnataka 560038</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-item-icon">📞</span>
+                            <div class="info-item-content">
+                                <p>Phone Number</p>
+                                <p>+91 87654 32109</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4-Photo Capture Section -->
+                <div class="photo-capture-section" id="photoSection">
+                    <div class="info-card-header">
+                        <span style="font-size: 1.5rem;">📸</span>
+                        <h3 id="photoSectionTitle">Item Documentation (4 Photos)</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1rem;"
+                        id="photoSectionDesc">
+                        Capture 4 different angles of the item to document its condition
+                    </p>
+
+                    <!-- 4-Photo Grid -->
+                    <div class="photo-grid">
+                        <!-- Front Photo -->
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Front View</div>
+                            <div class="photo-preview-small" id="photoFront">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>Front</p>
+                                </div>
+                            </div>
+                            <div class="file-input-wrapper">
+                                <label for="photoInputFront" class="btn btn-secondary btn-small">
+                                    <span>Capture</span>
+                                </label>
+                                <input type="file" id="photoInputFront" accept="image/*" capture="environment"
+                                    onchange="handle4PhotoCapture(event, 'front')">
+                            </div>
+                        </div>
+
+                        <!-- Back Photo -->
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Back View</div>
+                            <div class="photo-preview-small" id="photoBack">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>Back</p>
+                                </div>
+                            </div>
+                            <div class="file-input-wrapper">
+                                <label for="photoInputBack" class="btn btn-secondary btn-small">
+                                    <span>Capture</span>
+                                </label>
+                                <input type="file" id="photoInputBack" accept="image/*" capture="environment"
+                                    onchange="handle4PhotoCapture(event, 'back')">
+                            </div>
+                        </div>
+
+                        <!-- Left Photo -->
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Left Side</div>
+                            <div class="photo-preview-small" id="photoLeft">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>Left</p>
+                                </div>
+                            </div>
+                            <div class="file-input-wrapper">
+                                <label for="photoInputLeft" class="btn btn-secondary btn-small">
+                                    <span>Capture</span>
+                                </label>
+                                <input type="file" id="photoInputLeft" accept="image/*" capture="environment"
+                                    onchange="handle4PhotoCapture(event, 'left')">
+                            </div>
+                        </div>
+
+                        <!-- Right Photo -->
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Right Side</div>
+                            <div class="photo-preview-small" id="photoRight">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>Right</p>
+                                </div>
+                            </div>
+                            <div class="file-input-wrapper">
+                                <label for="photoInputRight" class="btn btn-secondary btn-small">
+                                    <span>Capture</span>
+                                </label>
+                                <input type="file" id="photoInputRight" accept="image/*" capture="environment"
+                                    onchange="handle4PhotoCapture(event, 'right')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Damage Description -->
+                    <div style="margin-top: 1.5rem;">
+                        <label for="damageDescription"
+                            style="display: block; color: var(--text-secondary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">
+                            <span id="damageLabel">📝 Pre-existing Damage Description</span>
+                        </label>
+                        <textarea id="damageDescription" rows="4"
+                            placeholder="Describe any damages, scratches, dents, or defects you notice..."
+                            style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 2px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary); font-size: 0.95rem; font-family: inherit; resize: vertical;"
+                            maxlength="500"></textarea>
+                        <div
+                            style="text-align: right; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                            <span id="charCount">0</span>/500 characters
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Original Condition Section (Hidden, shown for RETURN orders) -->
+                <div class="comparison-section" id="originalConditionSection" style="display: none;">
+                    <div class="info-card-header">
+                        <span style="font-size: 1.5rem;">🔍</span>
+                        <h3>Original Condition (From First Delivery)</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1rem;">
+                        Compare with these photos taken during the initial pickup
+                    </p>
+
+                    <!-- Original 4 Photos -->
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Original Front</div>
+                            <div class="photo-preview-small" id="originalPhotoFront">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>No photo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Original Back</div>
+                            <div class="photo-preview-small" id="originalPhotoBack">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>No photo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Original Left</div>
+                            <div class="photo-preview-small" id="originalPhotoLeft">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>No photo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-label">📷 Original Right</div>
+                            <div class="photo-preview-small" id="originalPhotoRight">
+                                <div class="photo-preview-placeholder">
+                                    <div class="icon">📸</div>
+                                    <p>No photo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Original Damage Description -->
+                    <div
+                        style="margin-top: 1rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-radius: var(--radius-md); border-left: 3px solid var(--primary);">
+                        <div
+                            style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase;">
+                            Original Damage Notes:
+                        </div>
+                        <div style="color: var(--text-primary); font-size: 0.95rem;" id="originalDamageText">
+                            No damages reported
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span style="font-size: 1.5rem;">🗺️</span>
+                        <h3>Navigation</h3>
+                    </div>
+                    <div class="map-container">
+                        <div id="map" class="map-placeholder">
+                            <div class="icon">🗺️</div>
+                            <p>Loading map...</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Distance: 8.5 km · ETA: 25 mins</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-icon" onclick="openGoogleMaps()">
+                        <span>🧭 Open in Google Maps</span>
+                    </button>
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="display: grid; gap: 1rem; margin-top: 1.5rem;">
+                    <button class="btn btn-success btn-icon" onclick="completeDelivery()">
+                        <span>✓ Complete Delivery</span>
+                    </button>
+                    <button class="btn btn-danger btn-icon" onclick="reportIssue()">
+                        <span>⚠️ Report Issue</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== ORDERS PAGE ==================== -->
+        <div id="ordersPage" class="page">
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="header-title">My Orders</h1>
+                </div>
+            </header>
+            <div class="dashboard">
+                <div class="section-header">
+                    <h3>All Deliveries</h3>
+                    <span id="deliveryCount" style="color: var(--text-secondary); font-size: 0.875rem;"></span>
+                </div>
+                <div class="order-list" id="completedOrdersList">
+                    <!-- Completed orders will be dynamically loaded here -->
+                    <div style="text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
+                        <p>No completed deliveries yet</p>
+                        <p style="font-size: 0.875rem; margin-top: 0.5rem;">Complete your first delivery to see it here!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <nav class="bottom-nav">
+                <a class="nav-item" onclick="showPage('dashboardPage')">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a class="nav-item active" onclick="showPage('ordersPage')">
+                    <span class="icon">📦</span>
+                    <span>Orders</span>
+                </a>
+                <a class="nav-item" onclick="showPage('earningsPage')">
+                    <span class="icon">💰</span>
+                    <span>Earnings</span>
+                </a>
+                <a class="nav-item" onclick="showPage('profilePage')">
+                    <span class="icon">👤</span>
+                    <span>Profile</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- ==================== EARNINGS PAGE ==================== -->
+        <div id="earningsPage" class="page">
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="header-title">Earnings</h1>
+                </div>
+            </header>
+            <div class="dashboard">
+                <div class="welcome-card">
+                    <h2>Total Earnings</h2>
+                    <p style="font-size: 2.5rem; font-weight: 800; margin-top: 0.5rem;">₹45,680</p>
+                    <p style="opacity: 0.9;">This month: ₹12,450</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">✓</div>
+                        <div class="stat-label">Deliveries</div>
+                        <div class="stat-value">156</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-label">Reward Points</div>
+                        <div class="stat-value">2,450</div>
+                    </div>
+                </div>
+            </div>
+            <nav class="bottom-nav">
+                <a class="nav-item" onclick="showPage('dashboardPage')">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a class="nav-item" onclick="showPage('ordersPage')">
+                    <span class="icon">📦</span>
+                    <span>Orders</span>
+                </a>
+                <a class="nav-item active" onclick="showPage('earningsPage')">
+                    <span class="icon">💰</span>
+                    <span>Earnings</span>
+                </a>
+                <a class="nav-item" onclick="showPage('profilePage')">
+                    <span class="icon">👤</span>
+                    <span>Profile</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- ==================== PROFILE PAGE ==================== -->
+        <div id="profilePage" class="page">
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="header-title">Profile</h1>
+                </div>
+            </header>
+            <div class="dashboard">
+                <div class="info-card">
+                    <div class="user-info" style="flex-direction: column; text-align: center;">
+                        <div class="user-avatar" style="width: 80px; height: 80px; font-size: 2rem;">A</div>
+                        <div class="user-details">
+                            <h4 style="font-size: 1.5rem;">Alex Morgan</h4>
+                            <p>⭐ 4.9 Rating · Elite Partner</p>
+                            <p style="margin-top: 0.5rem;">+91 98765 12345</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-danger" style="margin-top: 2rem;" onclick="logout()">
+                    🚪 Logout
+                </button>
+            </div>
+            <nav class="bottom-nav">
+                <a class="nav-item" onclick="showPage('dashboardPage')">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a class="nav-item" onclick="showPage('ordersPage')">
+                    <span class="icon">📦</span>
+                    <span>Orders</span>
+                </a>
+                <a class="nav-item" onclick="showPage('earningsPage')">
+                    <span class="icon">💰</span>
+                    <span>Earnings</span>
+                </a>
+                <a class="nav-item active" onclick="showPage('profilePage')">
+                    <span class="icon">👤</span>
+                    <span>Profile</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- ==================== REWARD MODAL ==================== -->
+        <div id="rewardModal" class="modal-overlay">
+            <div class="modal">
+                <div class="modal-icon">🎉</div>
+                <h2>Delivery Completed!</h2>
+                <p>Great job! You've earned rewards for this delivery.</p>
+                <div class="reward-amount">+₹180</div>
+                <div style="text-align: center; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    <p>Bonus: +50 Reward Points</p>
+                </div>
+                <button class="btn btn-success" onclick="closeRewardModal()">
+                    ✓ Continue
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
