@@ -223,7 +223,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-For support, email: [your-email@example.com]
+For support, email: [mohankrishnan@gmail.com]
 
 ## 🗺️ Roadmap
 
