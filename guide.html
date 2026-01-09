@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEx Delivery - Usage Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #fee140;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul,
+        ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #00f2fe;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            margin-top: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 242, 254, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 242, 254, 0.5);
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📦 RentEx Delivery Partner</h1>
+        <p style="text-align: center; font-size: 1.1rem; opacity: 0.9;">Quick Start Guide</p>
+
+        <h2>🚀 Getting Started</h2>
+        <p>Welcome to the RentEx Delivery Partner app! This guide will help you understand how to use all the features
+            of the app.</p>
+
+        <h2>🔐 Login</h2>
+        <div class="feature-box">
+            <h3>Step 1: Access the Login Page</h3>
+            <p>When you first open the app, you'll see the login page with:</p>
+            <ul>
+                <li>Email or Phone Number field</li>
+                <li>Password field</li>
+                <li>Forgot Password link</li>
+                <li>Sign In button</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h3>Demo Mode</h3>
+            <p><strong>For testing:</strong> Enter any email/phone and password, then click "Sign In" to access the
+                dashboard.</p>
+        </div>
+
+        <h2>🏠 Dashboard Overview</h2>
+        <p>After logging in, you'll land on the main dashboard with:</p>
+
+        <h3>Statistics Cards</h3>
+        <ul>
+            <li><strong>Today's Earnings:</strong> Money earned today (₹1,250)</li>
+            <li><strong>Completed:</strong> Number of deliveries completed (8)</li>
+            <li><strong>Active:</strong> Ongoing deliveries (2)</li>
+            <li><strong>Rewards:</strong> Points earned (850 pts)</li>
+        </ul>
+
+        <h3>Order List</h3>
+        <p>View all your upcoming delivery requests. Each order shows:</p>
+        <ul>
+            <li>Order ID and status badge</li>
+            <li>Item name and description</li>
+            <li>Pickup and drop-off locations</li>
+            <li>Package size and weight</li>
+            <li>Earnings for this delivery</li>
+            <li>Accept/Reject buttons</li>
+        </ul>
+
+        <h2>📦 Managing Orders</h2>
+
+        <h3>Accepting an Order</h3>
+        <ol>
+            <li>Review the order details on the dashboard</li>
+            <li>Click the green "✓ Accept" button</li>
+            <li>You'll be taken to the order details page</li>
+            <li>A success notification will appear</li>
+        </ol>
+
+        <h3>Rejecting an Order</h3>
+        <ol>
+            <li>Click the "✕ Reject" button on any order</li>
+            <li>Confirm your decision</li>
+            <li>The order will be removed from your list</li>
+        </ol>
+
+        <h2>📋 Order Details Page</h2>
+        <p>This is the most important page for active deliveries. It contains:</p>
+
+        <div class="feature-box">
+            <h3>1. Order Information</h3>
+            <ul>
+                <li>Item name and description</li>
+                <li>Package size and weight</li>
+                <li>Your earnings</li>
+                <li>Rental period (for rental items)</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h3>2. Seller Information</h3>
+            <ul>
+                <li>Name and avatar</li>
+                <li>Rating and rental history</li>
+                <li>Pickup address</li>
+                <li>Contact phone number</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h3>3. Customer Information</h3>
+            <ul>
+                <li>Name and avatar</li>
+                <li>Rating and member status</li>
+                <li>Delivery address</li>
+                <li>Contact phone number</li>
+            </ul>
+        </div>
+
+        <h2>📸 Photo Verification</h2>
+        <p><strong>Important:</strong> You must capture a photo of the item before completing delivery!</p>
+
+        <h3>How to Capture Photos</h3>
+        <ol>
+            <li>Scroll to the "Item Verification Photo" section</li>
+            <li>Click the "📷 Capture Photo" button</li>
+            <li>Your device camera will open</li>
+            <li>Take a clear photo of the item</li>
+            <li>The photo will appear in the preview area</li>
+            <li>A success notification will confirm the capture</li>
+        </ol>
+
+        <h2>🗺️ Navigation & Maps</h2>
+
+        <h3>Route Preview</h3>
+        <p>The app shows a route preview with:</p>
+        <ul>
+            <li>Distance (e.g., 8.5 km)</li>
+            <li>Estimated Time of Arrival (ETA: 25 mins)</li>
+            <li>Traffic conditions</li>
+        </ul>
+
+        <h3>Google Maps Integration</h3>
+        <ol>
+            <li>Click "🧭 Open in Google Maps" button</li>
+            <li>Google Maps will open in a new tab</li>
+            <li>Turn-by-turn directions will be displayed</li>
+            <li>Follow the route to complete your delivery</li>
+        </ol>
+
+        <h2>🔍 Rental Item Comparison</h2>
+        <p><strong>For rental returns:</strong> Compare the item's condition before and after the rental period.</p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Click "🔍 Show Condition Comparison" button</li>
+            <li>View the "Before Rental" photo (taken at initial delivery)</li>
+            <li>Capture an "After Rental" photo</li>
+            <li>Compare both images for any damage</li>
+            <li>If damage is found, report it before completing delivery</li>
+        </ol>
+
+        <h2>✅ Completing a Delivery</h2>
+
+        <h3>Step-by-Step Process</h3>
+        <ol>
+            <li><strong>Verify:</strong> Ensure you've captured the required photos</li>
+            <li><strong>Confirm:</strong> Click the green "✓ Complete Delivery" button</li>
+            <li><strong>Approve:</strong> Confirm the completion in the popup</li>
+            <li><strong>Celebrate:</strong> Watch the confetti animation! 🎉</li>
+            <li><strong>Reward:</strong> See your earnings and bonus points</li>
+        </ol>
+
+        <div class="feature-box">
+            <h3>What Happens After Completion</h3>
+            <ul>
+                <li>Your earnings are updated (+₹180)</li>
+                <li>Completed deliveries count increases</li>
+                <li>Reward points are added (+50 pts)</li>
+                <li>Active deliveries count decreases</li>
+                <li>The order moves to your history</li>
+            </ul>
+        </div>
+
+        <h2>⚠️ Reporting Issues</h2>
+        <p>If you encounter any problems during delivery:</p>
+
+        <ol>
+            <li>Click the "⚠️ Report Issue" button</li>
+            <li>Select the type of issue:
+                <ul>
+                    <li>Item is damaged</li>
+                    <li>Item is different from description</li>
+                    <li>Customer is unavailable</li>
+                    <li>Address is incorrect</li>
+                    <li>Other issue</li>
+                </ul>
+            </li>
+            <li>Support team will be notified immediately</li>
+            <li>Wait for assistance before proceeding</li>
+        </ol>
+
+        <h2>🧭 Bottom Navigation</h2>
+        <p>Quickly access different sections of the app:</p>
+
+        <ul>
+            <li><strong>🏠 Home:</strong> Dashboard with statistics and orders</li>
+            <li><strong>📦 Orders:</strong> View all your deliveries</li>
+            <li><strong>💰 Earnings:</strong> Track your income and rewards</li>
+            <li><strong>👤 Profile:</strong> Manage your account settings</li>
+        </ul>
+
+        <h2>💡 Pro Tips</h2>
+
+        <div class="feature-box">
+            <h3>Maximize Your Earnings</h3>
+            <ul>
+                <li>Accept orders quickly to get priority</li>
+                <li>Complete deliveries on time for bonus points</li>
+                <li>Maintain high ratings for better opportunities</li>
+                <li>Use Google Maps for fastest routes</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h3>Photo Best Practices</h3>
+            <ul>
+                <li>Take photos in good lighting</li>
+                <li>Capture the entire item clearly</li>
+                <li>Show any existing damage for protection</li>
+                <li>Store photos are kept for 30 days</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h3>Safety First</h3>
+            <ul>
+                <li>Always verify the customer's identity</li>
+                <li>Check package contents before pickup</li>
+                <li>Report suspicious items immediately</li>
+                <li>Use the in-app phone feature for privacy</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Quick Actions Checklist</h2>
+        <p><strong>For Every Delivery:</strong></p>
+        <ol>
+            <li>☑️ Accept the order from dashboard</li>
+            <li>☑️ Review seller and customer details</li>
+            <li>☑️ Capture pickup verification photo</li>
+            <li>☑️ Navigate using Google Maps</li>
+            <li>☑️ (For rentals) Compare before/after photos</li>
+            <li>☑️ Complete delivery and collect rewards</li>
+        </ol>
+
+        <h2>❓ FAQs</h2>
+
+        <h3>Q: What if I can't capture a photo?</h3>
+        <p>The app requires a photo for verification. If you're having camera issues, contact support immediately.</p>
+
+        <h3>Q: Can I cancel an accepted order?</h3>
+        <p>Yes, but excessive cancellations may affect your rating. Use the "Report Issue" feature to explain.</p>
+
+        <h3>Q: How long are photos stored?</h3>
+        <p>Photos are stored for 30 days to help resolve any disputes.</p>
+
+        <h3>Q: When do I get paid?</h3>
+        <p>Earnings are updated in real-time. Actual payments are processed weekly to your bank account.</p>
+
+        <h3>Q: What are reward points for?</h3>
+        <p>Reward points can be redeemed for bonuses, fuel discounts, and exclusive perks!</p>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="cta-button">🚀 Start Delivering Now!</a>
+        </div>
+
+        <p style="text-align: center; margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">
+            Need help? Contact support at <strong>support@rentex.com</strong> or call <strong>1800-RENTEX</strong>
+        </p>
+    </div>
+</body>
+
+</html>
